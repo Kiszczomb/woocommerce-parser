@@ -1,0 +1,38 @@
+PSEUDOCODE
+    - create new csv template (or table, JSON, whatever) with columns "ID", "Typ", "Nazwa", "Element nadrzędny", "Cena" named output_table.
+    - create atribs_table to hold | Numer atrybutu | Nazwa atrybutu | Wartości atrybutu        |
+                                  | 1              | "Format"       | "85 x 55 mm, 90 x 50 mm" |
+    - get_attribs - for columns up to "Cena" - attribs:
+        - get their name (ex. "Format").
+        - add to asoc table (1 -> "Format") .
+        - add new attrib columns "Nazwa atrybutu <n>" and "Wartości atrybutu <n>" to output_table.
+    - get_values - for every attrib:
+        - find distinct values.
+        - put them in coresponding row of column "Wartości atrybutu" of attrib_table.
+    - get_id - ask for ID.
+    - get_name - ask for name.
+    - create_primary_product - row in output_table with all properly filled columns
+    - get_data - for rows of data:
+        - create new row in output_table.
+        - fill "Typ" = "variation", "Nazwa" = <name>, "Element nadrzędny" = id:<ID>
+        - for atribs columns of a row:
+            - copy <n> column value to "Wartości atrybutu <n>", copy attribs_table[n]."Nazwa atrybutu" to "Nazwa atrybutu <n>" of that ^ new row
+            - if column.header == "Cena" -> copy value to "Cena" of that ^ new row
+        - until end of input file
+    - parse output_table to file parsed_<input file name>.csv
+
+========================
+FORMIDABLE JSON EXAMPLE:
+========================
+
+fields
+    product_id	"1334"
+    product_name	"Testowy produkt"
+files
+    product_csv
+        size	89748
+        filepath	"/tmp/57cff0f67bf96a01da20f0300"
+        newFilename	"57cff0f67bf96a01da20f0300"
+        mimetype	"image/jpeg"
+        mtime	"2022-09-25T16:30:37.895Z"
+        originalFilename	"full-stack-developer.jpg"

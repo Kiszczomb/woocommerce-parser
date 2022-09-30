@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+    body {
+        @apply bg-gray-800 p-6 flex flex-col gap-6 min-h-screen;
+    }
+    main {
+        @apply bg-gray-600 p-6 flex flex-col gap-6 rounded-xl shadow-lg text-gray-200;
+    }
+    footer {
+        @apply flex flex-col flex-1 justify-end;
+    }
+    input {
+        @apply text-gray-800;
+    }
+}

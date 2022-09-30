@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    <main>
+        <div class="overflow-x-auto relative shadow-md rounded-lg border border-gray-500">
+            <table class="w-full text-base text-left text-gray-700">
+                <thead class="text-xs text-gray-400 uppercase bg-gray-700">
+                    <tr>
+                        <th scope="col" class="py-3 px-6">
+                            Nazwa pliku
+                        </th>
+                        <th scope="col" class="py-3 px-6">
+                            Mimetype
+                        </th>
+                        <th scope="col" class="py-3 px-6">
+                            ID produktu
+                        </th>
+                        <th scope="col" class="py-3 px-6">
+                            Nazwa produktu
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-gray-300 ">
+                        <td class="py-4 px-6">
+                            <%= filename %>
+                        </td>
+                        <td class="py-4 px-6">
+                            <%= filetype %>
+                        </td>
+                        <td class="py-4 px-6">
+                            <%= product_id %>
+                        </td>
+                        <td class="py-4 px-6">
+                            <%= product_name %>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>
